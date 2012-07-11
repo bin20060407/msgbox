@@ -26,12 +26,18 @@
 		$('body').append(html);
 		$('#medesky_msgbox').fadeIn('slow').delay(options.delay).fadeOut('slow');
 
+        // 跳转到指定url
+        if(options.url != null) {
+            window.location.href = options.url;
+        }      
+
 	};
 
 	/* 默认参数 */
 	$.msgbox.options = {
 		type: 'success',
 		msg: '提交成功',
+        url: null,
 		delay: 1200
 	};
 
