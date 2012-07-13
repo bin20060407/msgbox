@@ -11,7 +11,10 @@
 				jQuery.msgbox({
 					type: 'success',
 					msg: '发表成功',
-					delay: 1000
+					delay: 1000,
+					end: function(){
+						alert('我是在提示框显示完之后再显示的哦！');
+					}
 				});
 			});
 

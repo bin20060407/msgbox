@@ -22,19 +22,21 @@ Hi,这是一个消息弹出层的jQuery插件，外观样式使用了QQ空间中
     </pre>
 
 4.  参数说明
-        type: 'success',
-        msg: '发表成功',
-        delay: 1200
     <pre>
     参数        类型      默认值       功能                     备注
     type       字符串     'success'    设置提示框类型     success:成功 error:错误 warn:提示 clear:普通文本提示
     msg        字符串     '提交成功'   提示的内容    
     url        字符串     null         提示之后自动跳转到指定url    
-    delay      数字       1200         消息框在页面中显示的时间     
+    delay      数字       1200         消息框在页面中显示的时间
+    end        函数       null         提示框显示完之后需要执行的操作   
     </pre>
 
 
 ###Change Log
+=========【2012.7.11】MsgBox 1.1 =========
+
+【添加】提示框显示完之后需要执行的操作
+【感谢】感谢安正超(www.joychao.cc)帮忙添加这个功能
 
 =========【2012.7.11】MsgBox 1.0 =========
 

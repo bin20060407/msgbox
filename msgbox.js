@@ -1,6 +1,6 @@
 /**
  * MsgBox - jQuery Plugin
- * version: 1.0 (07/10/2012)
+ * version: 1.1 (07/14/2012)
  * @requires jQuery v1.7.2 or later
  *
  * Examples at http://medesky.github.com/msgbox
@@ -30,10 +30,15 @@
 
 		// 提示框插入到页面
 		$('body').append(html);
-		$('#medesky_msgbox').fadeIn('slow').delay(options.delay).fadeOut('slow');
+		$('#medesky_msgbox').fadeIn('slow').delay(options.delay).fadeOut('slow', function(){
+			// 提示框显示完之后调用的方法
+			if(options.end) {
+				options.end();
+			}
+		});
 
         // 跳转到指定url
-        if(options.url != null) {
+        if(options.url) {
             window.location.href = options.url;
         }
 
@@ -44,7 +49,8 @@
 		type: 'success',
 		msg: '提交成功',
         url: null,
-		delay: 1200
+		delay: 1200,
+		end: null
 	};
 
 })(jQuery);
