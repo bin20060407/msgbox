@@ -23,14 +23,11 @@
 			'</span>'+
 		'</div>';
 
-		// 判断提示框是否在页面中存在，如果存在则干掉
-		if($('#medesky_msgbox')) {
-			$('#medesky_msgbox').remove();			
-		}
 
 		// 提示框插入到页面
-		$('body').append(html);
-		$('#medesky_msgbox').fadeIn('slow').delay(options.delay).fadeOut('slow', function(){
+		$(html).appendTo('body').fadeIn('slow').delay(options.delay).fadeOut('slow', function(){
+			// 移除掉自己
+			$(this).remove();
 			// 提示框显示完之后调用的方法
 			if(options.end) {
 				options.end();
